@@ -22,5 +22,9 @@ namespace Lab456_NgoThanhThai.Models
         public byte CategoryId { get; set; }
     }
 
+
+
+
+
     
 }
