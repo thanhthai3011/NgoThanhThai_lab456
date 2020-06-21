@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace Lab456_NgoThanhThai.Controllers
 {
@@ -16,7 +17,11 @@ namespace Lab456_NgoThanhThai.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            var upcommingCourses = _dbContext.Courses
+                .Include(c => c.Lecturer)
+                .Include(c => c.Category)
+                .Where(c => c.DateTime > DateTime.Now);
+            return View(upcommingCourses);
         }
 
         public ActionResult About()
