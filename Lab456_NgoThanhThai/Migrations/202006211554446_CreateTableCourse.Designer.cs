@@ -13,7 +13,7 @@ namespace Lab456_NgoThanhThai.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202006010242140_CreateTableCourse"; }
+            get { return "202006211554446_CreateTableCourse"; }
         }
         
         string IMigrationMetadata.Source

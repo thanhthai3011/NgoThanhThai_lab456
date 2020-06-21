@@ -24,5 +24,5 @@ namespace Lab456_NgoThanhThai.ViewModels
         {
             return DateTime.Parse(string.Format("{0} {1}", Date, Time));
         }
-    } 
+    }
 }

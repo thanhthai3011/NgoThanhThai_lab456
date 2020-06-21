@@ -6,13 +6,13 @@ using System.Web;
 
 namespace Lab456_NgoThanhThai.Models
 {
+    
     public class Course
     {
         public int Id { get; set; }
-        
-        public ApplicationUser Lecture { get; set; }
+        public ApplicationUser Lecturer { get; set; }
         [Required]
-        public string LectureId { get; set; }
+        public string LecturerId { get; set; }
         [Required]
         [StringLength(255)]
         public string Place { get; set; }
@@ -20,6 +20,7 @@ namespace Lab456_NgoThanhThai.Models
         public Category Category { get; set; }
         [Required]
         public byte CategoryId { get; set; }
+
     }
-        
+    
 }

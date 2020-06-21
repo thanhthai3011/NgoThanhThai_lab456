@@ -13,7 +13,7 @@ namespace Lab456_NgoThanhThai.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202006010243063_PopulateCategoryTable"; }
+            get { return "202006211555565_PopulateCategoryTable"; }
         }
         
         string IMigrationMetadata.Source

@@ -3,22 +3,21 @@ using Lab456_NgoThanhThai.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace Lab456_NgoThanhThai.Controllers
 {
-    
-    public class CoursesController : Controller
+    public class CourseController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
-        public CoursesController()
+        public CourseController()
         {
             _dbContext = new ApplicationDbContext();
         }
-        [Authorize]
-        // GET: Courses
+        // GET: Course
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel
@@ -32,14 +31,14 @@ namespace Lab456_NgoThanhThai.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CourseViewModel viewModel)
         {
-            if (!ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 viewModel.Categories = _dbContext.Categories.ToList();
                 return View("Create", viewModel);
             }
             var course = new Course
             {
-                LectureId = User.Identity.GetUserId(),
+                LecturerId = User.Identity.GetUserId(),
                 DateTime = viewModel.GetDateTime(),
                 CategoryId = viewModel.Category,
                 Place = viewModel.Place
